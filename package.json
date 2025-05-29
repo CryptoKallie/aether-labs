@@ -102,9 +102,11 @@
   },
   "dependencies": {
     "@electron/notarize": "^2.3.2",
+    "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-separator": "^1.1.2",
-    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.1.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -114,11 +116,13 @@
     "lucide-react": "^0.475.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.56.4",
     "react-router": "^7.2.0",
     "react-router-dom": "^6.16.0",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.173.0"
+    "three": "^0.173.0",
+    "zod": "^3.25.34"
   },
   "devDependencies": {
     "@electron/rebuild": "^3.3.0",

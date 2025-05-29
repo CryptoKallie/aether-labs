@@ -1,14 +1,6 @@
 import React from 'react';
-import { ReactComponent as HomeIcon } from '../../../../assets/icons/home.svg';
-import { ReactComponent as SettingsIcon } from '../../../../assets/icons/settings.svg';
-import { ReactComponent as BarChartIcon } from '../../../../assets/icons/bar-chart.svg';
-import { ReactComponent as SimIcon } from '../../../../assets/icons/sim.svg';
 import {
   SidebarFooter,
-} from '@/Components/ui/sidebar';
-import { Link, useLocation } from 'react-router-dom';
-
-import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
@@ -18,20 +10,25 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/Components/ui/sidebar';
+import { Link, useLocation } from 'react-router-dom';
+import { ReactComponent as HomeIcon } from '../../../../assets/icons/home.svg';
+import { ReactComponent as SettingsIcon } from '../../../../assets/icons/settings.svg';
+import { ReactComponent as BarChartIcon } from '../../../../assets/icons/bar-chart.svg';
+import { ReactComponent as SimIcon } from '../../../../assets/icons/sim.svg';
 
-const NavBar: React.FC = () => {
+function NavBar() {
   const applicationItems = [
     {
       title: 'Home',
       url: '/',
       icon: HomeIcon,
-    }
+    },
   ];
 
-  const SimulationItems = [
+  const AutomationItems = [
     {
-      title: 'Controller',
-      url: '/simulation',
+      title: 'Vin Decoder',
+      url: '/decoder',
       icon: SimIcon,
     },
     {
@@ -55,7 +52,10 @@ const NavBar: React.FC = () => {
             <SidebarMenu>
               {applicationItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={useLocation().pathname === item.url}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={useLocation().pathname === item.url}
+                  >
                     <Link to={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
@@ -66,13 +66,17 @@ const NavBar: React.FC = () => {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+
         <SidebarGroup>
-          <SidebarGroupLabel>Simulation</SidebarGroupLabel>
+          <SidebarGroupLabel>Automation</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {SimulationItems.map((item) => (
+              {AutomationItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={useLocation().pathname === item.url}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={useLocation().pathname === item.url}
+                  >
                     <Link to={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
@@ -83,7 +87,7 @@ const NavBar: React.FC = () => {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        <SidebarFooter></SidebarFooter>
+        <SidebarFooter />
       </SidebarContent>
     </Sidebar>
     // <aside
@@ -101,6 +105,6 @@ const NavBar: React.FC = () => {
     //   </div>
     // </aside>
   );
-};
+}
 
 export default NavBar;
