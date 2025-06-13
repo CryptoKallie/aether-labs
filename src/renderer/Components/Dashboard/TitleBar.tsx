@@ -2,25 +2,43 @@ import React from 'react';
 
 import { ReactComponent as Logo } from '../../../../assets/icons/sparkle.svg';
 
+import { IconX, IconSquares, IconMinus } from '@tabler/icons-react';
+
 function TitleBar() {
   return (
     <nav className="bg-primary-dark text-white flex border-b border-primary-light justify-between items-center z-20 w-full right-0">
       <div
         style={{ WebkitAppRegion: 'drag' }}
-        className="pl-6 pr-5 flex w-3/4 items-center justify-start rounded-r-full h-full"
+        className="pl-2 pr-5 flex w-3/4 items-center justify-start rounded-r-full h-full"
       >
-        <span className="font-fancy mr-6 text-2xl text-primary-light select-none self-end">
-          xo
-        </span>
-        <Logo className="h-10 w-8 text-primary-darker " />
-        <h1 className="text-3xl font-fancy text-primary-darker select-none transition-transform duration-300 ease-in-out transform hover:scale-110">
-          Dosei Automation
-        </h1>
+        <div className="flex items-center  mr-6">
+          <button
+            type="button"
+            className="p-1 rounded hover:bg-primary-light/20"
+            title="Minimize"
+          >
+            <IconX size={25} className="text-primary-light" />
+          </button>
+          <button
+            type="button"
+            className="p-1 rounded bg-primary-dark"
+            title="Minimize"
+          >
+            <IconSquares size={25} className="text-primary-light" />
+          </button>
+          <button
+            type="button"
+            className="p-1 rounded hover:bg-primary-light/20"
+            title="Minimize"
+          >
+            <IconMinus size={25} className="text-primary-light" />
+          </button>
+        </div>
       </div>
       <div className="pr-5 p-2 flex space-x-2">
-        <span className="inline-flex ml-3 font-mono items-center justify-center px-2 pl-4 pr-4 text-sm text-gray-light bg-primary-darker rounded-full">
-          v1.0.0
-        </span>
+        <h1 className="text-2xl font-fancy text-primary-darker select-none transition-transform duration-300 ease-in-out transform hover:scale-110">
+          DOSEI{' '}
+        </h1>
       </div>
     </nav>
   );

@@ -31,16 +31,6 @@ function NavBar() {
       url: '/decoder',
       icon: SimIcon,
     },
-    {
-      title: 'Logs & Data',
-      url: '/logs',
-      icon: BarChartIcon,
-    },
-    {
-      title: 'Settings',
-      url: '/settings',
-      icon: SettingsIcon,
-    },
   ];
 
   return (
